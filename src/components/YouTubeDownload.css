@@ -1,0 +1,207 @@
+.yt-download-layout {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.yt-download-card {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem 2.25rem;
+}
+
+.yt-download-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.5rem;
+}
+
+.yt-download-desc {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  margin: 0 0 1.5rem;
+}
+
+.yt-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.yt-input {
+  width: 100%;
+  padding: 0.82rem 1rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #fff;
+  transition: border-color 0.2s;
+}
+
+.yt-input::placeholder { color: rgba(255, 255, 255, 0.3); }
+.yt-input:focus { outline: none; border-color: rgba(99, 102, 241, 0.7); }
+.yt-input:disabled { opacity: 0.5; }
+
+.yt-form-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.yt-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.yt-input-small {
+  width: 80px;
+  padding: 0.5rem 0.6rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #fff;
+  text-align: center;
+}
+
+.yt-input-small:focus { outline: none; border-color: rgba(99, 102, 241, 0.7); }
+
+.yt-btn {
+  padding: 0.7rem 1.3rem;
+  background: rgba(99, 102, 241, 0.85);
+  border: 1px solid rgba(129, 140, 248, 0.4);
+  border-radius: 12px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, box-shadow 0.18s;
+  white-space: nowrap;
+}
+
+.yt-btn:hover:not(:disabled) {
+  background: rgba(99, 102, 241, 1);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+.yt-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.yt-btn-cancel {
+  background: rgba(248, 113, 113, 0.2);
+  border-color: rgba(248, 113, 113, 0.4);
+  color: #fca5a5;
+}
+
+.yt-btn-cancel:hover { background: rgba(248, 113, 113, 0.35); }
+
+.yt-btn-sm {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.82rem;
+  border-radius: 8px;
+}
+
+.yt-progress-wrap {
+  margin: 1rem 0;
+}
+
+.yt-progress-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.yt-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.8), rgba(139, 92, 246, 0.9));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.yt-progress-text {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.yt-error {
+  color: #fca5a5;
+  font-size: 0.85rem;
+  padding: 0.6rem 0.85rem;
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  border-radius: 8px;
+  margin: 0.75rem 0;
+}
+
+.yt-results { margin-top: 1.25rem; }
+
+.yt-results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.yt-results-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.yt-table-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+}
+
+.yt-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.yt-table th,
+.yt-table td {
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+}
+
+.yt-table th {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.yt-table td { color: rgba(255, 255, 255, 0.8); }
+
+.yt-table tr:hover td { background: rgba(255, 255, 255, 0.03); }
+
+.yt-link {
+  color: #93c5fd;
+  text-decoration: none;
+}
+.yt-link:hover { text-decoration: underline; }
