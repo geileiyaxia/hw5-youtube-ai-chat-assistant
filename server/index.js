@@ -1,4 +1,8 @@
-require('dotenv').config();
+const dns = require("dns");
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
+console.log("YOUTUBE_API_KEY exists?", Boolean(process.env.YOUTUBE_API_KEY));
 const express = require('express');
 const { MongoClient, ObjectId } = require('mongodb');
 const bcrypt = require('bcryptjs');
@@ -164,7 +168,7 @@ app.patch('/api/sessions/:id/title', async (req, res) => {
 
 app.post('/api/messages', async (req, res) => {
   try {
-    const { session_id, role, content, imageData, charts, toolCalls } = req.body;
+    const { session_id, role, content, imageData, charts, toolCalls, videoCards, generatedImages } = req.body;
     if (!session_id || !role || content === undefined)
       return res.status(400).json({ error: 'session_id, role, content required' });
     const msg = {
@@ -176,6 +180,8 @@ app.post('/api/messages', async (req, res) => {
       }),
       ...(charts?.length && { charts }),
       ...(toolCalls?.length && { toolCalls }),
+      ...(videoCards?.length && { videoCards }),
+      ...(generatedImages?.length && { generatedImages }),
     };
     await db.collection('sessions').updateOne(
       { _id: new ObjectId(session_id) },
@@ -211,6 +217,8 @@ app.get('/api/messages', async (req, res) => {
           : undefined,
         charts: m.charts?.length ? m.charts : undefined,
         toolCalls: m.toolCalls?.length ? m.toolCalls : undefined,
+        videoCards: m.videoCards?.length ? m.videoCards : undefined,
+        generatedImages: m.generatedImages?.length ? m.generatedImages : undefined,
       };
     });
     res.json(msgs);

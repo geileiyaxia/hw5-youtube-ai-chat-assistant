@@ -602,9 +602,11 @@ export default function Chat({ user, onLogout }) {
       sessionId,
       'model',
       savedContent,
-      generatedImages.length ? generatedImages : null,
+      null,
       toolCharts.length ? toolCharts : null,
-      toolCalls.length ? toolCalls : null
+      toolCalls.length ? toolCalls : null,
+      toolVideoCards.length ? toolVideoCards : null,
+      generatedImages.length ? generatedImages : null
     );
 
     setSessions((prev) =>
