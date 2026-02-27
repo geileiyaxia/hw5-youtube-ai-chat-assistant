@@ -4,7 +4,7 @@ import { JSON_TOOL_DECLARATIONS } from './jsonTools';
 
 const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API_KEY || '');
 
-const MODEL = 'gemini-2.0-flash';
+const MODEL = 'gemini-2.5-flash';
 
 const SEARCH_TOOL = { googleSearch: {} };
 const CODE_EXEC_TOOL = { codeExecution: {} };
@@ -275,7 +275,7 @@ export const chatWithJsonTools = async (history, newMessage, jsonFields, execute
 
 export const generateImageWithGemini = async (prompt, anchorImageBase64 = null, mimeType = 'image/png') => {
   const model = genAI.getGenerativeModel({
-    model: 'gemini-2.0-flash-exp',
+    model: 'gemini-2.5-flash-image',
     generationConfig: { responseModalities: ['TEXT', 'IMAGE'] },
   });
 
